@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.milinshiguang.dao.mybatis.mapper.JobMapper">
+  <resultMap id="BaseResultMap" type="com.milinshiguang.entity.Job">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="post_name" jdbcType="VARCHAR" property="postName" />
+    <result column="compony_name" jdbcType="VARCHAR" property="componyName" />
+    <result column="working_place" jdbcType="VARCHAR" property="workingPlace" />
+    <result column="pay" jdbcType="VARCHAR" property="pay" />
+    <result column="release_time" jdbcType="VARCHAR" property="releaseTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, post_name, compony_name, working_place, pay, release_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from job
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from job
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.milinshiguang.entity.Job">
+    insert into job (id, post_name, compony_name, 
+      working_place, pay, release_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{postName,jdbcType=VARCHAR}, #{componyName,jdbcType=VARCHAR}, 
+      #{workingPlace,jdbcType=VARCHAR}, #{pay,jdbcType=VARCHAR}, #{releaseTime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.milinshiguang.entity.Job">
+    insert into job
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="postName != null">
+        post_name,
+      </if>
+      <if test="componyName != null">
+        compony_name,
+      </if>
+      <if test="workingPlace != null">
+        working_place,
+      </if>
+      <if test="pay != null">
+        pay,
+      </if>
+      <if test="releaseTime != null">
+        release_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="postName != null">
+        #{postName,jdbcType=VARCHAR},
+      </if>
+      <if test="componyName != null">
+        #{componyName,jdbcType=VARCHAR},
+      </if>
+      <if test="workingPlace != null">
+        #{workingPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="pay != null">
+        #{pay,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseTime != null">
+        #{releaseTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.milinshiguang.entity.Job">
+    update job
+    <set>
+      <if test="postName != null">
+        post_name = #{postName,jdbcType=VARCHAR},
+      </if>
+      <if test="componyName != null">
+        compony_name = #{componyName,jdbcType=VARCHAR},
+      </if>
+      <if test="workingPlace != null">
+        working_place = #{workingPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="pay != null">
+        pay = #{pay,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseTime != null">
+        release_time = #{releaseTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.milinshiguang.entity.Job">
+    update job
+    set post_name = #{postName,jdbcType=VARCHAR},
+      compony_name = #{componyName,jdbcType=VARCHAR},
+      working_place = #{workingPlace,jdbcType=VARCHAR},
+      pay = #{pay,jdbcType=VARCHAR},
+      release_time = #{releaseTime,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.milinshiguang.entity.Job">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="post_name" jdbcType="VARCHAR" property="postName" />
+    <result column="compony_name" jdbcType="VARCHAR" property="componyName" />
+    <result column="working_place" jdbcType="VARCHAR" property="workingPlace" />
+    <result column="pay" jdbcType="VARCHAR" property="pay" />
+    <result column="release_time" jdbcType="VARCHAR" property="releaseTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, post_name, compony_name, working_place, pay, release_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from job
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from job
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.milinshiguang.entity.Job">
+    insert into job (id, post_name, compony_name, 
+      working_place, pay, release_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{postName,jdbcType=VARCHAR}, #{componyName,jdbcType=VARCHAR}, 
+      #{workingPlace,jdbcType=VARCHAR}, #{pay,jdbcType=VARCHAR}, #{releaseTime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.milinshiguang.entity.Job">
+    insert into job
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="postName != null">
+        post_name,
+      </if>
+      <if test="componyName != null">
+        compony_name,
+      </if>
+      <if test="workingPlace != null">
+        working_place,
+      </if>
+      <if test="pay != null">
+        pay,
+      </if>
+      <if test="releaseTime != null">
+        release_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="postName != null">
+        #{postName,jdbcType=VARCHAR},
+      </if>
+      <if test="componyName != null">
+        #{componyName,jdbcType=VARCHAR},
+      </if>
+      <if test="workingPlace != null">
+        #{workingPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="pay != null">
+        #{pay,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseTime != null">
+        #{releaseTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.milinshiguang.entity.Job">
+    update job
+    <set>
+      <if test="postName != null">
+        post_name = #{postName,jdbcType=VARCHAR},
+      </if>
+      <if test="componyName != null">
+        compony_name = #{componyName,jdbcType=VARCHAR},
+      </if>
+      <if test="workingPlace != null">
+        working_place = #{workingPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="pay != null">
+        pay = #{pay,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseTime != null">
+        release_time = #{releaseTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.milinshiguang.entity.Job">
+    update job
+    set post_name = #{postName,jdbcType=VARCHAR},
+      compony_name = #{componyName,jdbcType=VARCHAR},
+      working_place = #{workingPlace,jdbcType=VARCHAR},
+      pay = #{pay,jdbcType=VARCHAR},
+      release_time = #{releaseTime,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

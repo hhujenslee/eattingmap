@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.milinshiguang.dao.mybatis.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.milinshiguang.entity.Users">
+    <id column="userid" jdbcType="INTEGER" property="userid" />
+    <id column="user_phone" jdbcType="INTEGER" property="userPhone" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_mail" jdbcType="VARCHAR" property="userMail" />
+    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userid, user_phone, user_name, user_mail, user_password
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.milinshiguang.entity.UsersKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from users
+    where userid = #{userid,jdbcType=INTEGER}
+      and user_phone = #{userPhone,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.milinshiguang.entity.UsersKey">
+    delete from users
+    where userid = #{userid,jdbcType=INTEGER}
+      and user_phone = #{userPhone,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.milinshiguang.entity.Users">
+    insert into users (userid, user_phone, user_name, 
+      user_mail, user_password)
+    values (#{userid,jdbcType=INTEGER}, #{userPhone,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, 
+      #{userMail,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.milinshiguang.entity.Users">
+    insert into users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="userPhone != null">
+        user_phone,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userMail != null">
+        user_mail,
+      </if>
+      <if test="userPassword != null">
+        user_password,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="userPhone != null">
+        #{userPhone,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userMail != null">
+        #{userMail,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.milinshiguang.entity.Users">
+    update users
+    <set>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userMail != null">
+        user_mail = #{userMail,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        user_password = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=INTEGER}
+      and user_phone = #{userPhone,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.milinshiguang.entity.Users">
+    update users
+    set user_name = #{userName,jdbcType=VARCHAR},
+      user_mail = #{userMail,jdbcType=VARCHAR},
+      user_password = #{userPassword,jdbcType=VARCHAR}
+    where userid = #{userid,jdbcType=INTEGER}
+      and user_phone = #{userPhone,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.milinshiguang.entity.Users">
+    <id column="userid" jdbcType="INTEGER" property="userid" />
+    <id column="user_phone" jdbcType="INTEGER" property="userPhone" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_mail" jdbcType="VARCHAR" property="userMail" />
+    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userid, user_phone, user_name, user_mail, user_password
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.milinshiguang.entity.UsersKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from users
+    where userid = #{userid,jdbcType=INTEGER}
+      and user_phone = #{userPhone,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.milinshiguang.entity.UsersKey">
+    delete from users
+    where userid = #{userid,jdbcType=INTEGER}
+      and user_phone = #{userPhone,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.milinshiguang.entity.Users">
+    insert into users (userid, user_phone, user_name, 
+      user_mail, user_password)
+    values (#{userid,jdbcType=INTEGER}, #{userPhone,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, 
+      #{userMail,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.milinshiguang.entity.Users">
+    insert into users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="userPhone != null">
+        user_phone,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userMail != null">
+        user_mail,
+      </if>
+      <if test="userPassword != null">
+        user_password,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="userPhone != null">
+        #{userPhone,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userMail != null">
+        #{userMail,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.milinshiguang.entity.Users">
+    update users
+    <set>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userMail != null">
+        user_mail = #{userMail,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        user_password = #{userPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where userid = #{userid,jdbcType=INTEGER}
+      and user_phone = #{userPhone,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.milinshiguang.entity.Users">
+    update users
+    set user_name = #{userName,jdbcType=VARCHAR},
+      user_mail = #{userMail,jdbcType=VARCHAR},
+      user_password = #{userPassword,jdbcType=VARCHAR}
+    where userid = #{userid,jdbcType=INTEGER}
+      and user_phone = #{userPhone,jdbcType=INTEGER}
+  </update>
+</mapper>
