@@ -3,7 +3,7 @@ package com.milinshiguang.dao.mybatis.mapper;
 import com.milinshiguang.entity.Users;
 import com.milinshiguang.entity.UsersKey;
 
-public interface UsersMapper {
+public interface UsersMapper<Users> {
     int deleteByPrimaryKey(UsersKey key);
 
     int insert(Users record);
